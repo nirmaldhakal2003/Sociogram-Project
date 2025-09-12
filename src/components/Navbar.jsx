@@ -11,7 +11,7 @@ const Navbar = () => {
     <div className="w-full bg-orange-300">
       <div className="flex justify-between items-center ml-6 mr-6 md:ml-30 md:mr-30 h-20">
         <div className="flex h-20 items-center">
-          <Link to="/">
+          <Link to="/home">
             <h1 className="font-bold text-3xl text-white">SocioGram</h1>
           </Link>
         </div>
