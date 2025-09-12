@@ -3,7 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { toFormikValidationSchema } from "zod-formik-adapter";
 import { useState } from "react";
 import Button from "../components/Button";
-import { loginSchema } from "../validation/LoginSchema";
+import { loginSchema } from "../validation/loginSchema.js";
 
 const LogIn = () => {
   const [errorMessage, setErrorMessage] = useState("");
