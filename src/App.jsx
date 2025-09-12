@@ -8,7 +8,7 @@ import {
 import "./App.css";
 
 import { Home } from "./pages/Home";
-import { Settings } from "./pages/settings";
+import { Settings } from "./pages/Settings";
 import { Post } from "./pages/Post";
 import { Bookmark } from "./pages/Bookmark";
 import LogIn from "./pages/LogIn";
