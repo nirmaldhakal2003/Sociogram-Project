@@ -63,35 +63,45 @@ It uses **free social media API endpoints** to simulate a real social media expe
 ---
 
 ## 📂 Project Structure
+```
+SOFTWARE HUB/
+├── 📁 node_modules/          # Dependencies
+├── 📁 public/                # Static assets
+├── 📁 src/                   # Source code
+│   ├── 📁 API/               # API requests
+│   │   └── ApiData.jsx       # API data handling
+│   ├── 📁 assets/            # Images, fonts, etc.
+│   ├── 📁 components/        # Reusable React components
+│   │   ├── Button.jsx        # Button component
+│   │   ├── Footer.jsx        # Footer component
+│   │   └── Navbar.jsx        # Navbar component
+│   ├── ProfileCard.jsx       # User profile card component
+│   ├── 📁 pages/             # Page components
+│   │   ├── Bookmark.jsx      # Bookmarked posts page
+│   │   ├── Home.jsx          # Home/feed page
+│   │   ├── LogIn.jsx         # Login page
+│   │   ├── NotFound.jsx      # 404 error page
+│   │   ├── Post.jsx          # Individual post page
+│   │   ├── Profile.jsx       # User profile page
+│   │   ├── Register.jsx      # Registration page
+│   │   ├── Settings.jsx      # User settings page
+│   │   └── ViewProfile.jsx   # View another user's profile
+│   ├── 📁 validation/        # Form validation schemas
+│   │   ├── loginSchema.js    # Login validation
+│   │   └── registerSchema.js # Registration validation
+│   ├── App.css               # Global application styles
+│   ├── App.jsx               # Main application component
+│   ├── index.css             # Base CSS styles
+│   └── main.jsx              # Application entry point
+├── .gitignore                # Git ignore rules
+├── eslint.config.js          # ESLint configuration
+├── index.html                # HTML entry point
+├── package-lock.json         # Dependency lock file
+├── package.json              # Project dependencies and scripts
+├── README.md                 # Project documentation
+└── vite.config.js            # Vite configuration
 
-src/
-├── API/
-│ └── ApiData.jsx
-├── assets/
-├── components/
-│ ├── Button.jsx
-│ ├── Footer.jsx
-│ ├── Navbar.jsx
-│ └── ProfileCard.jsx
-├── pages/
-│ ├── Bookmark.jsx
-│ ├── Home.jsx
-│ ├── LogIn.jsx
-│ ├── NotFound.jsx
-│ ├── Post.jsx
-│ ├── Profile.jsx
-│ ├── Register.jsx
-│ ├── Settings.jsx
-│ └── ViewProfile.jsx
-├── validation/
-│ ├── loginSchema.js
-│ └── registerSchema.js
-├── App.jsx
-├── App.css
-├── main.jsx
-└── index.css
-
-````
+```
 
 
 
