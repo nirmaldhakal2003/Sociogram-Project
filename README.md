@@ -74,8 +74,8 @@ SOFTWARE HUB/
 │   ├── 📁 components/        # Reusable React components
 │   │   ├── Button.jsx        # Button component
 │   │   ├── Footer.jsx        # Footer component
-│   │   └── Navbar.jsx        # Navbar component
-│   ├── ProfileCard.jsx       # User profile card component
+│   │   ├──Navbar.jsx        # Navbar component
+│   │   └──ProfileCard.jsx       # User profile card component
 │   ├── 📁 pages/             # Page components
 │   │   ├── Bookmark.jsx      # Bookmarked posts page
 │   │   ├── Home.jsx          # Home/feed page
