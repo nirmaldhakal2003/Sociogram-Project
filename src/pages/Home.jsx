@@ -17,13 +17,25 @@ export const Home = () => {
 
   const handleLike = (id) => {
     updatePosts(
-      posts.map((p) => (p.id === id ? { ...p, likes: p.likes + 1 } : p))
+      posts.map((p) =>
+        p.id === id
+          ? p.liked || p.disliked
+            ? p
+            : { ...p, likes: p.likes + 1, liked: true }
+          : p
+      )
     );
   };
 
   const handleDislike = (id) => {
     updatePosts(
-      posts.map((p) => (p.id === id ? { ...p, dislikes: p.dislikes + 1 } : p))
+      posts.map((p) =>
+        p.id === id
+          ? p.disliked || p.liked
+            ? p
+            : { ...p, dislikes: p.dislikes + 1, disliked: true }
+          : p
+      )
     );
   };
 
@@ -45,11 +57,9 @@ export const Home = () => {
   return (
     <div className="min-h-screen bg-orange-100 p-6 flex flex-col items-center">
       <h1 className="text-3xl font-bold mb-6">Home</h1>
-
       {posts.length === 0 ? (
         <p>
-          {" "}
-          create post to see post here.. go to post page and create a post first{" "}
+          create post to see post here.. go to post page and create a post first
         </p>
       ) : (
         <div className="space-y-6 w-full md:w-2/3">
@@ -75,22 +85,25 @@ const PostCard = ({ post, onLike, onDislike, onBookmark, onComment }) => {
   return (
     <div className="bg-white shadow-md rounded-xl p-5">
       <p className="text-gray-800">{post.content}</p>
-
       <div className="flex gap-4 mt-4 items-center">
         <button
-          className="flex items-center gap-1 text-blue-500 hover:scale-110 transition"
+          className={`flex items-center gap-1 ${
+            post.liked ? "text-blue-700" : "text-blue-500"
+          } hover:scale-110 transition`}
           onClick={() => onLike(post.id)}
+          disabled={post.liked || post.disliked}
         >
           <ThumbsUp size={18} /> {post.likes}
         </button>
-
         <button
-          className="flex items-center gap-1 text-red-500 hover:scale-110 transition"
+          className={`flex items-center gap-1 ${
+            post.disliked ? "text-red-700" : "text-red-500"
+          } hover:scale-110 transition`}
           onClick={() => onDislike(post.id)}
+          disabled={post.disliked || post.liked}
         >
           <ThumbsDown size={18} /> {post.dislikes}
         </button>
-
         <button
           className={`flex items-center gap-1 ${
             post.bookmarked ? "text-yellow-500" : "text-gray-500"
@@ -101,7 +114,6 @@ const PostCard = ({ post, onLike, onDislike, onBookmark, onComment }) => {
           {post.bookmarked ? "Saved" : "Save"}
         </button>
       </div>
-
       <div className="mt-4">
         <div className="flex items-center gap-2">
           <input
@@ -119,7 +131,6 @@ const PostCard = ({ post, onLike, onDislike, onBookmark, onComment }) => {
             text=" Comment"
           />
         </div>
-
         {post.comments.length > 0 && (
           <div className="mt-3 space-y-2">
             {post.comments.map((c, i) => (
